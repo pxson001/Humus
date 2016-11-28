@@ -65,15 +65,15 @@ begin
 
     desc 'Drop DB for RACK_ENV'
     task :drop => :rack_env do
-      exists = `psql -l | grep trunk_cocoapods_org_test`
+      exists = `psql -h my-postgres -U postgres -l | grep trunk_cocoapods_org_test`
       unless exists.empty?
-        sh "dropdb trunk_cocoapods_org_#{ENV['RACK_ENV']}"
+        sh "dropdb -h my-postgres -U postgres trunk_cocoapods_org_#{ENV['RACK_ENV']}"
       end
     end
 
     desc 'Create DB for RACK_ENV'
     task :create => :rack_env do
-      sh "createdb -h localhost trunk_cocoapods_org_#{ENV['RACK_ENV']} -E UTF8"
+      sh "createdb -h my-postgres -U postgres trunk_cocoapods_org_#{ENV['RACK_ENV']} -E UTF8"
     end
 
     desc 'Drop, create and migrate the DB for RACK_ENV'

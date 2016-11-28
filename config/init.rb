@@ -4,7 +4,7 @@ ROOT = File.expand_path('../../', __FILE__)
 $LOAD_PATH.unshift File.join(ROOT, 'lib')
 
 ENV['RACK_ENV'] ||= 'production'
-ENV['DATABASE_URL'] ||= "postgres://localhost/trunk_cocoapods_org_#{ENV['RACK_ENV']}"
+ENV['DATABASE_URL'] ||= "postgres://postgres@postgres/trunk_cocoapods_org_#{ENV['RACK_ENV']}"
 
 # -- Database -----------------------------------------------------------------
 
