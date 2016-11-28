@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] ||= 'production'
 ENV['DATABASE_URL'] ||=
-  "postgres://postgres@postgres/trunk_cocoapods_org_#{ENV['RACK_ENV']}"
+  "postgres://postgres@my-postgres/trunk_cocoapods_org_#{ENV['RACK_ENV']}"
 
 #
 #
