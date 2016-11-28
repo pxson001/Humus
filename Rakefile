@@ -65,7 +65,7 @@ begin
 
     desc 'Drop DB for RACK_ENV'
     task :drop => :rack_env do
-      exists = `psql -h my-postgres -U postgres -l | grep trunk_cocoapods_org_test`
+      exists = `psql -h my-postgres -U postgres -l | grep trunk_cocoapods_org_#{ENV['RACK_ENV']}`
       unless exists.empty?
         sh "dropdb -h my-postgres -U postgres trunk_cocoapods_org_#{ENV['RACK_ENV']}"
       end
