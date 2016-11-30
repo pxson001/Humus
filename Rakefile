@@ -18,18 +18,18 @@ begin
   end
 
   task :rack_env do
-    ENV['RACK_ENV'] ||= 'production'
+    ENV['RACK_ENV'] ||= 'development'
 
-    # if ENV['RACK_ENV'] == 'production'
-    #   puts "Are you very very sure what you are doing? very/no/maybe"
-    #   exit unless STDIN.gets.strip == 'very'
+    if ENV['RACK_ENV'] == 'production'
+      puts "Are you very very sure what you are doing? very/no/maybe"
+      exit unless STDIN.gets.strip == 'very'
 
-    #   puts "Are you really really sure? really/naah"
-    #   exit unless STDIN.gets.strip == 'really'
+      puts "Are you really really sure? really/naah"
+      exit unless STDIN.gets.strip == 'really'
 
-    #   puts "Last chance: Absolutely sure? absolutely/nope"
-    #   exit unless STDIN.gets.strip == 'absolutely'
-    # end
+      puts "Last chance: Absolutely sure? absolutely/nope"
+      exit unless STDIN.gets.strip == 'absolutely'
+    end
   end
 
   namespace :db do
