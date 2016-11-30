@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] ||= 'production'
 ENV['DATABASE_URL'] ||=
-  "postgres://localhost/trunk_cocoapods_org_#{ENV['RACK_ENV']}"
+  "postgres://postgres@my-postgres/trunk_cocoapods_org_#{ENV['RACK_ENV']}"
 puts "[#{Process.pid}] Using DB: #{ENV['DATABASE_URL']}."
 
 uri = DataObjects::URI.parse(ENV['DATABASE_URL'])
