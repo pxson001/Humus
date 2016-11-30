@@ -18,7 +18,7 @@ begin
   end
 
   task :rack_env do
-    ENV['RACK_ENV'] ||= 'development'
+    ENV['RACK_ENV'] ||= 'production'
 
     if ENV['RACK_ENV'] == 'production'
       puts "Are you very very sure what you are doing? very/no/maybe"
